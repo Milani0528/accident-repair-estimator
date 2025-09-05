@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Accident Repair Estimator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>Accident Repair Estimator</h1>
+        <p>Upload a vehicle photo → AI classifies damage → shows rough LKR estimate.</p>
+    </header>
+
+    <section class="card">
+        <form id="form">
+            <label class="upload-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 16l-6-6h4V4h4v6h4z"/>
+                    <path d="M20 18H4v2h16z"/>
+                </svg>
+                <p>Click or Drag & Drop Vehicle Photo</p>
+                <input id="file" type="file" accept="image/*" />
+            </label>
+
+            <div class="preview"><img id="img" alt="" style="display:none" /></div>
+            <button id="btn" type="submit" disabled>Analyze Image</button>
+        </form>
+
+        <div id="error" class="error" style="display:none"></div>
+
+        <div id="result" class="card result" style="display:none">
+            <h2>Result</h2>
+            <div class="row"><span class="k">Prediction</span><span id="r-label"></span></div>
+            <div class="row"><span class="k">Confidence</span><span id="r-conf"></span></div>
+            <div class="row"><span class="k">Estimate</span><span id="r-est"></span></div>
+            <div class="row"><span class="k">Note</span><span id="r-note"></span></div>
+            <div class="row"><span class="k">Model</span><span id="r-model"></span></div>
+        </div>
+        <footer><small>Predictions powered by TensorFlow/Keras `.h5` model</small></footer>
+    </section>
+</div>
+
+<!-- loading overlay -->
+<div id="loading" class="spinner-overlay" style="display:none">
+    <div class="spinner"></div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

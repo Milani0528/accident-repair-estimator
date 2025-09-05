@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Flask
+instance/
+*.log
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
